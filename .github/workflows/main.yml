@@ -1,0 +1,53 @@
+name: CI
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Web Export
+    runs-on: ubuntu-latest
+    steps:
+      # Always include the checkout step so that
+      # your project is available for Godot to export
+    - name: checkout
+      uses: actions/checkout@v2.3.1
+      with:
+        fetch-depth: 0
+
+    # separate step to extract the version from the tag name
+    - name: get tag from version
+      id: tag_version
+      run: |
+        echo ::set-output name=TAG_VERSION::${GITHUB_REF#refs/tags/v}
+
+    - name: export game
+      # Use latest version (see releases for all versions)
+      uses: firebelley/godot-export@v3.0.0
+      with:
+        # Defining all the required inputs
+        # I used the mono version of Godot in this example
+        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.5.2/rc1/Godot_v3.5.2-rc1_linux_headless.64.zip
+        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.5.2/rc1/Godot_v3.5.2-rc1_export_templates.tpz
+        relative_project_path: ./
+        create_release: true
+        base_version:  ${{ steps.tag_version.outputs.TAG_VERSION}}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: copy zip
+      run: |
+        cd /home/runner/.local/share/godot/dist
+        mkdir ${{ github.workspace }}/dist
+        cp /home/runner/.local/share/godot/dist/HTML5.zip ${{ github.workspace }}/dist/HTML5.zip
+
+    # publish to itch
+    - uses: josephbmanley/butler-publish-itchio-action@master
+      env:
+        BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
+        CHANNEL: web
+        ITCH_GAME: ld-52-ulm
+        ITCH_USER: ulm-awesome
+        PACKAGE: /github/workspace/dist/HTML5.zip
+        VERSION: ${{ steps.tag_version.outputs.TAG_VERSION }}
