@@ -1,19 +1,35 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/Scene.gd" type="Script" id=1]
+[ext_resource path="res://scenes/03_game/SceneGame.gd" type="Script" id=1]
+[ext_resource path="res://components/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://components/item/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://components/item/ItemMessagebox.gd" type="Script" id=4]
 
-[node name="Scene" type="Node"]
+[node name="SceneGame" type="Node2D" groups=["scene_manager_entity_nodes"]]
 script = ExtResource( 1 )
+__meta__ = {
+"entity_name": "Game"
+}
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -58.0
-margin_top = -7.0
-margin_right = 58.0
-margin_bottom = 7.0
+margin_left = 559.0
+margin_top = 296.0
+margin_right = 675.0
+margin_bottom = 310.0
 text = "This is the GAME!!"
 align = 1
 valign = 1
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 418, 346 )
+
+[node name="Item" parent="." instance=ExtResource( 3 )]
+position = Vector2( 634, 337 )
+
+[node name="Item2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 631, 431 )
+script = ExtResource( 4 )
