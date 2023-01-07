@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_helper_pack/core/util/angle_util.gd"
 }, {
+"base": "Area2D",
+"class": "AreaButton",
+"language": "GDScript",
+"path": "res://components/button/Button.gd"
+}, {
 "base": "Object",
 "class": "ArrayUtil",
 "language": "GDScript",
@@ -69,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_helper_pack/godot_helper_pack_settings.gd"
 }, {
+"base": "Area2D",
+"class": "HarvesterPart",
+"language": "GDScript",
+"path": "res://components/harvester/HarvesterPart.gd"
+}, {
 "base": "Node",
 "class": "Mover2D",
 "language": "GDScript",
@@ -87,7 +97,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://components/player/Player.gd"
+"path": "res://components/old/player/Player.gd"
 }, {
 "base": "Node",
 "class": "PolygonUtil",
@@ -201,6 +211,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AngleUtil": "",
+"AreaButton": "",
 "ArrayUtil": "",
 "BitFlagUtil": "",
 "CameraLimiter2D": "",
@@ -212,6 +223,7 @@ _global_script_class_icons={
 "EnumUtil": "",
 "FileUtil": "",
 "GodotHelperPackSettings": "",
+"HarvesterPart": "",
 "Mover2D": "",
 "MultiMeshInstanceDistributionArea": "",
 "NodeUtil": "",
@@ -243,7 +255,7 @@ _global_script_class_icons={
 [application]
 
 config/name="52 - Tbd"
-run/main_scene="res://scenes/01_start/SceneStart.tscn"
+run/main_scene="res://scenes/03_game/SceneGame.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -260,9 +272,13 @@ GlobalBlockingColorChangeMonitor="*res://addons/godot_helper_pack/core/2d/shape/
 
 [display]
 
-window/size/width=1280
-window/size/height=720
-window/stretch/mode="2d"
+window/size/width=1920
+window/size/height=1080
+window/size/always_on_top=true
+window/size/test_width=960
+window/size/test_height=540
+window/dpi/allow_hidpi=true
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [editor_plugins]
@@ -335,6 +351,9 @@ settings={
 
 2d_render/layer_1="World"
 2d_render/layer_2="Player"
+2d_render/layer_3="Top"
+2d_render/layer_4="Body"
+2d_render/layer_5="Front"
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Interactable"

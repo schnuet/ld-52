@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/godot_helper_pack/core/2d/shape/circle_2d.gd" type="Script" id=1]
+[ext_resource path="res://components/planet/Circle_(transparent).png" type="Texture" id=2]
+[ext_resource path="res://components/planet/Planet.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4068.16
+
+[node name="Planet" type="StaticBody2D"]
+position = Vector2( -3, 0 )
+script = ExtResource( 3 )
+
+[node name="Circle2D" type="Position2D" parent="."]
+visible = false
+script = ExtResource( 1 )
+radius = 4211.64
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 8, 8 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

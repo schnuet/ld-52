@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://components/harvester/Harvester.gd" type="Script" id=1]
+[ext_resource path="res://components/harvester/front/Front.tscn" type="PackedScene" id=2]
+[ext_resource path="res://components/harvester/body/Body.tscn" type="PackedScene" id=3]
+[ext_resource path="res://components/harvester/top/Top.tscn" type="PackedScene" id=4]
+
+[node name="Harvester" type="Node2D" groups=["scene_manager_entity_nodes"]]
+script = ExtResource( 1 )
+__meta__ = {
+"entity_name": "Harvester"
+}
+
+[node name="Top" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -300 )
+
+[node name="Body" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -100 )
+
+[node name="Front" parent="." instance=ExtResource( 2 )]
+position = Vector2( 352, -100 )
+
+[connection signal="selected" from="Top" to="." method="_on_Top_selected"]
+[connection signal="selected" from="Body" to="." method="_on_Body_selected"]
+[connection signal="selected" from="Front" to="." method="_on_Front_selected"]

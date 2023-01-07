@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/03_game/SceneGame.gd" type="Script" id=1]
-[ext_resource path="res://components/player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://components/item/Item.tscn" type="PackedScene" id=3]
-[ext_resource path="res://components/item/ItemMessagebox.gd" type="Script" id=4]
+[ext_resource path="res://components/harvester/Harvester.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/03_game/UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/spawner/Spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/03_game/white.png" type="Texture" id=6]
+[ext_resource path="res://scenes/03_game/biome_dark/BiomeDark.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/03_game/biome_dark/images/IMG_0860.PNG" type="Texture" id=8]
+[ext_resource path="res://components/ParallaxSprite.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2000, 135 )
 
 [node name="SceneGame" type="Node2D" groups=["scene_manager_entity_nodes"]]
 script = ExtResource( 1 )
@@ -11,25 +18,35 @@ __meta__ = {
 "entity_name": "Game"
 }
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 559.0
-margin_top = 296.0
-margin_right = 675.0
-margin_bottom = 310.0
-text = "This is the GAME!!"
-align = 1
-valign = 1
+[node name="UI" parent="." instance=ExtResource( 4 )]
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 418, 346 )
+[node name="BiomeDark" parent="." instance=ExtResource( 7 )]
 
-[node name="Item" parent="." instance=ExtResource( 3 )]
-position = Vector2( 634, 337 )
+[node name="Spawner" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2598, 881 )
 
-[node name="Item2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 631, 431 )
-script = ExtResource( 4 )
+[node name="Harvester" parent="." instance=ExtResource( 3 )]
+position = Vector2( 349, 881 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( 1608, 1017 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource( 1 )
+
+[node name="Foreground" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+centered = false
+script = ExtResource( 9 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="SelectedLight" type="Light2D" parent="."]
+position = Vector2( 962, 530 )
+texture = ExtResource( 6 )
+energy = 0.0
+mode = 2
+range_item_cull_mask = 16
