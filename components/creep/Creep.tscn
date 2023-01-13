@@ -1,41 +1,68 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=56 format=2]
 
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00016.png" type="Texture" id=1]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00002.png" type="Texture" id=2]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00007.png" type="Texture" id=3]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00005.png" type="Texture" id=4]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00004.png" type="Texture" id=5]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00014.png" type="Texture" id=6]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00006.png" type="Texture" id=7]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00013.png" type="Texture" id=8]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00011.png" type="Texture" id=9]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00009.png" type="Texture" id=10]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00008.png" type="Texture" id=11]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00000.png" type="Texture" id=12]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00015.png" type="Texture" id=13]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00010.png" type="Texture" id=14]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00012.png" type="Texture" id=15]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00017.png" type="Texture" id=16]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00003.png" type="Texture" id=17]
-[ext_resource path="res://components/creep/sprites/hop/Pre-comp 1_00001.png" type="Texture" id=18]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0870.PNG" type="Texture" id=19]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0873.PNG" type="Texture" id=20]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0874.PNG" type="Texture" id=21]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0876.PNG" type="Texture" id=22]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0877.PNG" type="Texture" id=23]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0871.PNG" type="Texture" id=24]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0872.PNG" type="Texture" id=25]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0875.PNG" type="Texture" id=26]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0878.PNG" type="Texture" id=27]
-[ext_resource path="res://components/creep/sprites/lookback/IMG_0879.PNG" type="Texture" id=28]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0865.PNG" type="Texture" id=1]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0863.PNG" type="Texture" id=2]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0864.PNG" type="Texture" id=3]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0862.PNG" type="Texture" id=4]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0867.PNG" type="Texture" id=5]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0866.PNG" type="Texture" id=6]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0869.PNG" type="Texture" id=7]
+[ext_resource path="res://components/creep/sprites/red/walk/IMG_0861.PNG" type="Texture" id=8]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0870.PNG" type="Texture" id=19]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0873.PNG" type="Texture" id=20]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0874.PNG" type="Texture" id=21]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0876.PNG" type="Texture" id=22]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0877.PNG" type="Texture" id=23]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0871.PNG" type="Texture" id=24]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0872.PNG" type="Texture" id=25]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0875.PNG" type="Texture" id=26]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0878.PNG" type="Texture" id=27]
+[ext_resource path="res://components/creep/sprites/red/lookback/IMG_0879.PNG" type="Texture" id=28]
+[ext_resource path="res://components/creep/sprites/yellow/hop/IMG_0932.PNG" type="Texture" id=29]
+[ext_resource path="res://components/creep/sprites/yellow/hop/IMG_0936.PNG" type="Texture" id=30]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0960.PNG" type="Texture" id=31]
+[ext_resource path="res://components/creep/sprites/yellow/hop/IMG_0930.PNG" type="Texture" id=32]
+[ext_resource path="res://components/creep/sprites/yellow/hop/IMG_0934.PNG" type="Texture" id=33]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0962.PNG" type="Texture" id=34]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0961.PNG" type="Texture" id=35]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0963.PNG" type="Texture" id=36]
+[ext_resource path="res://components/creep/sprites/yellow/hop/IMG_0931.PNG" type="Texture" id=37]
+[ext_resource path="res://components/creep/sprites/yellow/hop/IMG_0935.PNG" type="Texture" id=38]
+[ext_resource path="res://components/creep/sprites/yellow/hop/IMG_0933.PNG" type="Texture" id=39]
+[ext_resource path="res://components/creep/sprites/blue/hop/IMG_0952.PNG" type="Texture" id=40]
+[ext_resource path="res://components/creep/sprites/blue/hop/IMG_0950.PNG" type="Texture" id=41]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0956.PNG" type="Texture" id=42]
+[ext_resource path="res://components/creep/sprites/blue/hop/IMG_0953.PNG" type="Texture" id=43]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0957.PNG" type="Texture" id=44]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0958.PNG" type="Texture" id=45]
+[ext_resource path="res://components/creep/sprites/blue/hop/IMG_0949.PNG" type="Texture" id=46]
+[ext_resource path="res://components/creep/sprites/blue/hop/IMG_0951.PNG" type="Texture" id=47]
+[ext_resource path="res://components/creep/sprites/blue/hop/IMG_0947.PNG" type="Texture" id=48]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0954.PNG" type="Texture" id=49]
+[ext_resource path="res://components/creep/sprites/blue/hop/IMG_0948.PNG" type="Texture" id=50]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0955.PNG" type="Texture" id=51]
+[ext_resource path="res://components/creep/sprites/blue/lookback/IMG_0959.PNG" type="Texture" id=52]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0943.PNG" type="Texture" id=53]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0940.PNG" type="Texture" id=54]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0941.PNG" type="Texture" id=55]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0945.PNG" type="Texture" id=56]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0938.PNG" type="Texture" id=57]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0939.PNG" type="Texture" id=58]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0944.PNG" type="Texture" id=59]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0937.PNG" type="Texture" id=60]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0942.PNG" type="Texture" id=61]
+[ext_resource path="res://components/creep/sprites/yellow/lookback/IMG_0946.PNG" type="Texture" id=62]
 
 [sub_resource type="GDScript" id=2]
-script/source = "extends Area2D
+script/source = "extends KinematicBody2D
 
 var speed = 100;
 var moving = false;
 
 var game;
+var harvester;
+
+var DeathSplat = preload(\"res://components/creep/DeathSplat.tscn\");
 
 func _ready():
 	if Globals.get(\"game_ready\") != true:
@@ -43,44 +70,54 @@ func _ready():
 	
 	var variance = 60;
 	scale = scale * ((100 - variance / 2) + (randi() % variance)) / 100;
-
+	
 	game = SceneManager.get_entity(\"Game\");
+	harvester = SceneManager.get_entity(\"Harvester\");
+	
+	var theme_color = Globals.get(\"theme_color\");
 	
 	moving = true;
-	$AnimatedSprite.play(\"hop\");
+	$AnimatedSprite.play(theme_color + \"_hop\");
 	
 func _physics_process(delta):
 	if (Globals.get(\"paused\")): return;
 	
+	
 	if moving:
-		position.x -= speed * delta;
+		move_and_slide(Vector2(speed - harvester.speed, 0));
 	else:
-		position.x -= (speed * 2) * delta;
+		move_and_slide(Vector2(-harvester.speed, 0));
+
 
 func _enter_collector(_collector):
-	print(\"enter collector\");
-	var biomass = Globals.get(\"biomass\");
-	game.set_biomass(biomass + 1);
+	var bio = Globals.get(\"bio\");
+	game.set_bio(bio + 1);
+	var splat = DeathSplat.instance();
+	get_parent().add_child(splat);
+	splat.global_position = global_position;
 	queue_free();
+	
 	
 func _exit_collector(_collector):
 	pass;
 
 
 func optionally_continue():
-	if $AnimatedSprite.animation == \"lookback\" and randi() % 6 == 1:
+	var theme_color = Globals.get(\"theme_color\");
+	
+	if $AnimatedSprite.animation == theme_color + \"_lookback\" and randi() % 6 == 1:
 		$AnimatedSprite.frame = 0;
-		$AnimatedSprite.play(\"lookback_pong\");
+		$AnimatedSprite.play(theme_color + \"_lookback\", true);
 		
-	elif $AnimatedSprite.animation == \"hop\" and randi() % 20 == 1:
+	elif $AnimatedSprite.animation == theme_color + \"_hop\" and randi() % 20 == 1:
 		moving = false;
 		$AnimatedSprite.stop();
-		$AnimatedSprite.play(\"lookback\");
+		$AnimatedSprite.play(theme_color + \"_lookback\");
 		
 	else:
 		moving = true;
 		$AnimatedSprite.frame = 0;
-		$AnimatedSprite.play(\"hop\");
+		$AnimatedSprite.play(theme_color + \"_hop\");
 
 func _on_AnimatedSprite_animation_finished():
 	optionally_continue();
@@ -91,24 +128,44 @@ extents = Vector2( 29, 20 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 17 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 1 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 48 ), ExtResource( 50 ), ExtResource( 46 ), ExtResource( 41 ), ExtResource( 47 ), ExtResource( 40 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "blue_hop",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 51 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 52 ), ExtResource( 31 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "blue_lookback",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": false,
-"name": "hop",
-"speed": 30.0
+"name": "red_hop",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 28 ) ],
 "loop": false,
-"name": "lookback",
+"name": "red_lookback",
 "speed": 30.0
 }, {
 "frames": [ ExtResource( 28 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 19 ) ],
 "loop": false,
-"name": "lookback_pong",
-"speed": 20.0
+"name": "red_lookback_pong",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 29 ), ExtResource( 39 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "yellow_hop",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 61 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 62 ) ],
+"loop": true,
+"name": "yellow_lookback",
+"speed": 15.0
 } ]
 
-[node name="Creep" type="Area2D"]
-collision_layer = 5
+[node name="Creep" type="KinematicBody2D" groups=["creep"]]
+collision_layer = 12
 script = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -118,6 +175,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -22 )
 frames = SubResource( 3 )
-animation = "hop"
+animation = "yellow_lookback"
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

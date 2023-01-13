@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://components/healthbar/sprites/blue/healthbar_blue_container.png" type="Texture" id=1]
+[ext_resource path="res://components/healthbar/sprites/blue/healthbar_blue_inlay.png" type="Texture" id=2]
+[ext_resource path="res://components/healthbar/Healthbar.gd" type="Script" id=3]
+[ext_resource path="res://components/healthbar/sprites/red/healthbar_red_inlay.png" type="Texture" id=4]
+[ext_resource path="res://components/healthbar/sprites/yellow/healthbar_yellow_container.png" type="Texture" id=5]
+[ext_resource path="res://components/healthbar/sprites/red/healthbar_red_container.png" type="Texture" id=6]
+[ext_resource path="res://components/healthbar/sprites/yellow/healthbar_yellow_inlay.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "blue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "red",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "yellow",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "blue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "red",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "yellow",
+"speed": 5.0
+} ]
+
+[node name="Healthbar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="under" type="AnimatedSprite" parent="."]
+visible = false
+self_modulate = Color( 100, 100, 100, 1 )
+position = Vector2( -52, 302.5 )
+frames = SubResource( 1 )
+animation = "yellow"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -104.0
+margin_bottom = 608.0
+
+[node name="over" type="AnimatedSprite" parent="."]
+position = Vector2( -137, 638.5 )
+scale = Vector2( 1, -1 )
+frames = SubResource( 2 )
+animation = "yellow"
+centered = false

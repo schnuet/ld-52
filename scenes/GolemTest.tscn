@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://components/golem/Golem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/harvester/Harvester.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/GolemTest.gd" type="Script" id=3]
+[ext_resource path="res://scenes/03_game/UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/build_menu/BuildMenu.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D" groups=["scene_manager_entity_nodes"]]
+script = ExtResource( 3 )
+__meta__ = {
+"entity_name": "Game"
+}
+
+[node name="UI" parent="." instance=ExtResource( 4 )]
+
+[node name="BuildMenu" parent="." instance=ExtResource( 5 )]
+
+[node name="Harvester" parent="." instance=ExtResource( 2 )]
+position = Vector2( 317, 800 )
+
+[node name="Golem" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1689, 800 )

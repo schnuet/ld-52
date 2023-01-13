@@ -1,16 +1,54 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/03_game/SceneGame.gd" type="Script" id=1]
+[ext_resource path="res://components/creep/CreepDestroyer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://components/harvester/Harvester.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/03_game/UI/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://components/spawner/Spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/03_game/white.png" type="Texture" id=6]
-[ext_resource path="res://scenes/03_game/biome_dark/BiomeDark.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/03_game/biome_dark/images/IMG_0860.PNG" type="Texture" id=8]
+[ext_resource path="res://worlds/world_urban/WorldUrban.tscn" type="PackedScene" id=7]
+[ext_resource path="res://worlds/world_urban/images/IMG_0860.PNG" type="Texture" id=8]
 [ext_resource path="res://components/ParallaxSprite.gd" type="Script" id=9]
+[ext_resource path="res://worlds/world_ice/backgrounds/biom_iceBoden.PNG" type="Texture" id=10]
+[ext_resource path="res://components/build_menu/BuildMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://worlds/world_urban/weather/IMG_0984.PNG" type="Texture" id=13]
+[ext_resource path="res://worlds/world_urban/weather/IMG_0985.PNG" type="Texture" id=14]
+[ext_resource path="res://worlds/world_urban/weather/IMG_0983.PNG" type="Texture" id=15]
+[ext_resource path="res://worlds/world_sulfur/weather/IMG_0988.PNG" type="Texture" id=16]
+[ext_resource path="res://worlds/world_ice/weather/IMG_0980.PNG" type="Texture" id=17]
+[ext_resource path="res://worlds/world_ice/weather/IMG_0982.PNG" type="Texture" id=18]
+[ext_resource path="res://worlds/world_ice/weather/IMG_0981.PNG" type="Texture" id=19]
+[ext_resource path="res://worlds/world_sulfur/weather/IMG_0986.PNG" type="Texture" id=20]
+[ext_resource path="res://worlds/world_sulfur/weather/IMG_0987.PNG" type="Texture" id=21]
+[ext_resource path="res://components/ore/OreSpawner.tscn" type="PackedScene" id=22]
+[ext_resource path="res://worlds/world_urban/images/biom_neutralBoden.PNG" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2000, 135 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "ice",
+"speed": 7.5
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "sulfur",
+"speed": 7.5
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "urban",
+"speed": 7.5
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 543.5, 620.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 200, 600 )
 
 [node name="SceneGame" type="Node2D" groups=["scene_manager_entity_nodes"]]
 script = ExtResource( 1 )
@@ -20,13 +58,20 @@ __meta__ = {
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
-[node name="BiomeDark" parent="." instance=ExtResource( 7 )]
+[node name="BuildMenu" parent="." instance=ExtResource( 12 )]
+visible = false
 
-[node name="Spawner" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2598, 881 )
+[node name="Backgrounds" type="Node2D" parent="."]
 
-[node name="Harvester" parent="." instance=ExtResource( 3 )]
-position = Vector2( 349, 881 )
+[node name="urban" parent="Backgrounds" instance=ExtResource( 7 )]
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="Spawner" parent="Main" instance=ExtResource( 5 )]
+position = Vector2( 2123, 881 )
+
+[node name="Harvester" parent="Main" instance=ExtResource( 3 )]
+position = Vector2( 388, 878 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 1608, 1017 )
@@ -37,10 +82,60 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource( 1 )
 
-[node name="Foreground" type="Sprite" parent="."]
+[node name="Foregrounds" type="Node2D" parent="."]
+
+[node name="urban" type="Node2D" parent="Foregrounds"]
+
+[node name="Weather" type="AnimatedSprite" parent="Foregrounds/urban"]
+visible = false
+frames = SubResource( 3 )
+animation = "urban"
+centered = false
+
+[node name="Floor" type="Sprite" parent="Foregrounds/urban"]
+texture = ExtResource( 23 )
+centered = false
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sulfur" type="Node2D" parent="Foregrounds"]
+visible = false
+
+[node name="Weather" type="AnimatedSprite" parent="Foregrounds/sulfur"]
+visible = false
+frames = SubResource( 3 )
+animation = "sulfur"
+centered = false
+
+[node name="Floor" type="Sprite" parent="Foregrounds/sulfur"]
 texture = ExtResource( 8 )
 centered = false
 script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ice" type="Node2D" parent="Foregrounds"]
+visible = false
+
+[node name="Weather" type="AnimatedSprite" parent="Foregrounds/ice"]
+visible = false
+frames = SubResource( 3 )
+animation = "ice"
+centered = false
+
+[node name="Floor" type="Sprite" parent="Foregrounds/ice"]
+texture = ExtResource( 10 )
+centered = false
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="OreSpawner" parent="." instance=ExtResource( 22 )]
+position = Vector2( 2035, 984 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -50,3 +145,18 @@ texture = ExtResource( 6 )
 energy = 0.0
 mode = 2
 range_item_cull_mask = 16
+
+[node name="CreepDestroyer" parent="." instance=ExtResource( 2 )]
+position = Vector2( -901, 488 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreepDestroyer"]
+shape = SubResource( 2 )
+
+[node name="CreepDestroyer2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 7614, 543 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreepDestroyer2"]
+shape = SubResource( 4 )

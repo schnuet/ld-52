@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SpaceHarvesterFire.ogg-f85b0c18a04e76f02bb86c65367cb0f0.oggstr"
+
+[deps]
+
+source_file="res://music/SpaceHarvesterFire.ogg"
+dest_files=[ "res://.import/SpaceHarvesterFire.ogg-f85b0c18a04e76f02bb86c65367cb0f0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

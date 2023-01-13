@@ -4,8 +4,10 @@ var current_music_name = "";
 
 # register and preload your music streams here:
 const music_streams = {
-#	"kronenberg": preload("res://assets/music/kronenberg_theme.ogg"),
-#	"maintheme": preload("res://assets/music/maintheme.ogg")
+	"ice": preload("res://music/SpaceHarvesterIce.ogg"),
+	"fire": preload("res://music/SpaceHarvesterFire.ogg"),
+	"urban": preload("res://music/SpaceHarvesterUrban.ogg"),
+	"maintheme": preload("res://music/SpaceHarvesterMaintheme.ogg")
 };
 
 func play_music(music_name:String):

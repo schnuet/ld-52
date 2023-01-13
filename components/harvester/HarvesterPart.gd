@@ -8,9 +8,7 @@ signal selected;
 signal deselected;
 
 func select():
-	var game = SceneManager.get_entity("Game");
-	if (game.select_part(self)):
-		emit_signal("selected");
+	emit_signal("selected");
 
 func deselect():
 	emit_signal("deselected");

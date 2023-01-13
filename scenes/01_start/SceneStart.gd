@@ -2,8 +2,7 @@ extends "../Scene.gd";
 
 
 func _ready():
-#	MusicPlayer.play_music("maintheme");
-	pass
+	MusicPlayer.play_music("maintheme");
 
 
 func _unhandled_input(event):
@@ -13,7 +12,8 @@ func _unhandled_input(event):
 
 func _on_StartButton_pressed():
 	Globals.set("game_ready", false);
-	SceneManager.change_scene("res://scenes/02_tutorial/TutorialScene.tscn");
+	MusicPlayer.stop();
+	SceneManager.change_scene("res://scenes/03_game/SceneGame.tscn");
 
 
 func _on_CreditsButton_pressed():

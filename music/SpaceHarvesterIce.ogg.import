@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SpaceHarvesterIce.ogg-8b64096548602abe46c284d72dbac2f6.oggstr"
+
+[deps]
+
+source_file="res://music/SpaceHarvesterIce.ogg"
+dest_files=[ "res://.import/SpaceHarvesterIce.ogg-8b64096548602abe46c284d72dbac2f6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

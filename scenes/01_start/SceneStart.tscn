@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/01_start/SceneStart.gd" type="Script" id=1]
+[ext_resource path="res://scenes/01_start/images/shadow_harvester_titlescreen_start_button.png" type="Texture" id=2]
+[ext_resource path="res://scenes/01_start/images/shadow_harvester_titlescreen_start_button_click.png" type="Texture" id=3]
+[ext_resource path="res://scenes/01_start/images/shadow_harvester_titlescreen_start_button_hover.png" type="Texture" id=4]
+[ext_resource path="res://scenes/01_start/images/shadow_harvester_titlescreen_credit_button_hover.png" type="Texture" id=5]
+[ext_resource path="res://scenes/01_start/images/shadow_harvester_titlescreen_credit_button.png" type="Texture" id=6]
+[ext_resource path="res://scenes/01_start/images/shadow_harvester_titlescreen_credit_button_click.png" type="Texture" id=7]
+[ext_resource path="res://scenes/01_start/images/shadow_harvester_titlescreen_ohne_harvester_01.png" type="Texture" id=8]
 
 [node name="StartScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,6 +19,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="ShadowHarvesterTitlescreenOhneHarvester01" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+centered = false
+
 [node name="SettingsButton" type="Button" parent="."]
 visible = false
 margin_left = 1056.0
@@ -20,19 +31,25 @@ margin_right = 1256.0
 margin_bottom = 52.0
 text = "Settings"
 
-[node name="StartButton" type="Button" parent="."]
-margin_left = 151.0
-margin_top = 146.0
-margin_right = 398.0
-margin_bottom = 224.0
-text = "Start"
+[node name="StartButton" type="TextureButton" parent="."]
+margin_left = 381.0
+margin_top = 750.0
+margin_right = 1341.0
+margin_bottom = 1061.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
 
-[node name="CreditsButton" type="Button" parent="."]
-margin_left = 871.0
-margin_top = 143.0
-margin_right = 1135.0
-margin_bottom = 225.0
-text = "Credits"
+[node name="CreditsButton" type="TextureButton" parent="."]
+margin_left = 1072.0
+margin_top = 750.0
+margin_right = 1989.0
+margin_bottom = 1045.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 5 )
 
 [connection signal="hidden" from="." to="." method="_on_StartScene_hidden"]
 [connection signal="shown" from="." to="." method="_on_StartScene_shown"]

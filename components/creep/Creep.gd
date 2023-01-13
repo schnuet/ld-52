@@ -16,9 +16,9 @@ func _physics_process(_delta):
 	var _v = move_and_slide(Vector2(-speed, 0));
 
 func _enter_collector(_collector):
-	print("enter collector");
-	var biomass = Globals.get("biomass");
-	game.set_biomass(biomass + 1);
+	# print("enter collector");
+	var bio = Globals.get("bio");
+	game.set_bio(bio + 1);
 	queue_free();
 	
 func _exit_collector(_collector):

@@ -5,7 +5,46 @@
 [node name="Spawner" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="GuyTimer" type="Timer" parent="."]
-autostart = true
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
 
-[connection signal="timeout" from="GuyTimer" to="." method="_on_GuyTimer_timeout"]
+[node name="PhaseTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BatTimer" type="Timer" parent="."]
+
+[node name="ExtraBatTimer" type="Timer" parent="BatTimer"]
+one_shot = true
+
+[node name="CreepTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ChargerTimer" type="Timer" parent="."]
+
+[node name="BatPosition" type="Position2D" parent="."]
+position = Vector2( 0, -600 )
+
+[node name="WeatherTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="WeatherStartTimer" type="Timer" parent="WeatherTimer"]
+one_shot = true
+
+[node name="WeatherTween" type="Tween" parent="WeatherTimer"]
+
+[node name="WeatherEndTimer" type="Timer" parent="WeatherTimer"]
+one_shot = true
+
+[node name="WeatherEndTween" type="Tween" parent="WeatherTimer"]
+
+[connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
+[connection signal="timeout" from="PhaseTimer" to="." method="_on_PhaseTimer_timeout"]
+[connection signal="timeout" from="BatTimer" to="." method="_on_BatTimer_timeout"]
+[connection signal="timeout" from="BatTimer/ExtraBatTimer" to="." method="_on_ExtraBatTimer_timeout"]
+[connection signal="timeout" from="CreepTimer" to="." method="_on_GuyTimer_timeout"]
+[connection signal="timeout" from="ChargerTimer" to="." method="_on_ChargerTimer_timeout"]
+[connection signal="timeout" from="WeatherTimer" to="." method="_on_WeatherTimer_timeout"]
+[connection signal="timeout" from="WeatherTimer/WeatherStartTimer" to="." method="_on_WeatherStartTimer_timeout"]
+[connection signal="tween_all_completed" from="WeatherTimer/WeatherTween" to="." method="_on_WeatherTween_tween_all_completed"]
+[connection signal="timeout" from="WeatherTimer/WeatherEndTimer" to="." method="_on_WeatherEndTimer_timeout"]
+[connection signal="tween_all_completed" from="WeatherTimer/WeatherEndTween" to="." method="_on_WeatherEndTween_tween_all_completed"]
