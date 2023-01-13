@@ -4,7 +4,7 @@ var harvester;
 
 var module_infos = {
 	"BodyChain": {
-		"name": "Chain Drive",
+		"name": "Shadowcrawler",
 		"part": "body_part",
 		"description": "In this form you can avoid hovering rocks. \n«Creeps hate this trick.»",
 		"price": {
@@ -14,7 +14,7 @@ var module_infos = {
 		}
 	},
 	"BodySpider": {
-		"name": "Spider Drive",
+		"name": "Spiderwalker",
 		"part": "body_part",
 		"description": "In this form you can walk on unstable ground. \n«You’ll never win a game of whack-a-mole like this.»",
 		"price": {
@@ -24,7 +24,7 @@ var module_infos = {
 		}
 	},
 	"BodyJet": {
-		"name": "Jet Drive",
+		"name": "Hoverjet",
 		"part": "body_part",
 		"description": "In this form you can travel with accelerated speed. \n«To infinity and beyond, baby.»",
 		"price": {
@@ -35,7 +35,7 @@ var module_infos = {
 	},
 	
 	"CollectorBio": {
-		"name": "Biomass Collector",
+		"name": "The Haecksler",
 		"part": "front_part",
 		"description": "A gruesome weapon to shred your enemies in to pieces. \n«Takin‘ the grind to the next level.»",
 		"price": {
@@ -45,7 +45,7 @@ var module_infos = {
 		}
 	},
 	"CollectorOre": {
-		"name": "Ore Collector",
+		"name": "Can-ye-drill",
 		"part": "front_part",
 		"description": "This tool can prospect ore from the ground. \n«Now I ain't sayin' she a gold digger…»",
 		"price": {
@@ -55,7 +55,7 @@ var module_infos = {
 		}
 	},
 	"CollectorGas": {
-		"name": "Gas Collector",
+		"name": "Egg sac",
 		"part": "front_part",
 		"description": "This tool can collect gas out of the air. \n«Take a deep breath and make it pop.»",
 		"price": {
@@ -76,7 +76,7 @@ var module_infos = {
 		}
 	},
 	"HeadCannon": {
-		"name": "Cannon",
+		"name": "Vaporizer",
 		"part": "top_part",
 		"description": "A distance weapon to vaporize your enemies. \n«Do not try this at home - your lungs won’t thank you.»",
 		"price": {
@@ -86,7 +86,7 @@ var module_infos = {
 		}
 	},
 	"HeadCoil": {
-		"name": "Tesla Coil",
+		"name": "Coil of Grayskull",
 		"part": "top_part",
 		"description": "This is the most powerful weapon in your arsenal. \n«By the power of grayskull - i have the power.»",
 		"price": {
