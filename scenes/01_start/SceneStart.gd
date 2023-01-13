@@ -1,6 +1,5 @@
 extends "../Scene.gd";
 
-
 func _ready():
 	MusicPlayer.play_music("maintheme");
 
@@ -12,8 +11,9 @@ func _unhandled_input(event):
 
 func _on_StartButton_pressed():
 	Globals.set("game_ready", false);
+	var game_scene = yield(BackgroundLoader.load_scene("res://scenes/03_game/SceneGame.tscn"), "resource_loaded");
 	MusicPlayer.stop();
-	SceneManager.change_scene("res://scenes/03_game/SceneGame.tscn");
+	SceneManager.change_scene(game_scene, { "skip_fade_out": true, "skip_fade_in": true });
 
 
 func _on_CreditsButton_pressed():
