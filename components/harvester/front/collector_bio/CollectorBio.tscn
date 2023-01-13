@@ -6,7 +6,7 @@
 extents = Vector2( 67, 72 )
 
 [node name="CollectorBiomass" type="Area2D"]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
 __meta__ = {
@@ -21,6 +21,4 @@ __meta__ = {
 }
 
 [connection signal="area_entered" from="." to="." method="_on_Collector_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_Collector_area_exited"]
-[connection signal="body_entered" from="." to="." method="_on_BiomassCollector_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_BiomassCollector_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_CollectorBiomass_body_entered"]

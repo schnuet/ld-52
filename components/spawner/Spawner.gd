@@ -106,13 +106,13 @@ func start_next_phase():
 			var check_3 = spawn_checkpoint(global_position.x + 500);
 			yield(check_3, "reached");
 			
-			yield(wait(10), "done");
-			spawn_ground_multiple(2);
+			yield(wait(2), "done");
+			spawn_ground_multiple(5);
 			
-			yield(wait(12), "done");
-			spawn_ground_multiple(10);
+			var check_4 = spawn_checkpoint(global_position.x + 500);
+			yield(check_4, "reached");
 			
-			yield(wait(30), "done");
+			yield(wait(3), "done");
 			
 			spawn_wall();
 			

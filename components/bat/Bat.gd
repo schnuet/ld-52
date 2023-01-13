@@ -22,7 +22,3 @@ func _physics_process(delta):
 func new_target_y():
 	target_y = center_y + (randi() % 200) - 100;
 
-
-func _on_Bat_area_entered(_area):
-	print("bat collided");
-	queue_free();

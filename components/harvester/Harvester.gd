@@ -4,6 +4,7 @@ extends Node2D
 signal speed_changed(speed, base_speed);
 signal ready_for_fight;
 signal anim_frame_changed(frame);
+signal collect(type, amount);
 
 var health = 1000 setget set_health;
 
@@ -160,6 +161,17 @@ func update_animated_sprite():
 		current_animated_sprite.visible = false;
 		current_animated_sprite = animated_sprite;
 
+
+func is_collecting_bio():
+	return front_part.active_module.name == "CollectorBio";
+	
+func is_collecting_ore():
+	return front_part.active_module.name == "CollectorOre";
+	
+func is_collecting_gas():
+	return front_part.active_module.name == "CollectorGas";
+
+
 func is_cannon_active():
 	return top_part.active_module.name == "HeadCannon";
 
@@ -168,6 +180,18 @@ func is_shield_active():
 
 func is_in_spider_mode():
 	return body_part.active_module.name == "BodySpider";
+
+
+
+
+func collect_bio(amount = 1):
+	emit_signal("collect", "bio", amount);
+
+func collect_ore(amount = 1):
+	emit_signal("collect", "ore", amount);
+	
+func collect_gas(amount = 1):
+	emit_signal("collect", "gas", amount);
 
 
 
@@ -181,6 +205,9 @@ func leave_stone():
 	if not in_golem_stage:
 		set_speed(move_state_speeds[move_state]);
 	
+	
+
+
 
 func enter_golem_stage():
 	in_golem_stage = true;

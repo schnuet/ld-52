@@ -63,8 +63,8 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 28 )
 
-[node name="Bat" type="Area2D"]
-collision_layer = 65
+[node name="Bat" type="Area2D" groups=["bat"]]
+collision_layer = 128
 collision_mask = 2
 script = ExtResource( 51 )
 
@@ -72,11 +72,9 @@ script = ExtResource( 51 )
 position = Vector2( 0, -80 )
 frames = SubResource( 1 )
 animation = "red"
-frame = 19
+frame = 33
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -4 )
 shape = SubResource( 2 )
-
-[connection signal="area_entered" from="." to="." method="_on_Bat_area_entered"]

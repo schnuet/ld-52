@@ -87,6 +87,18 @@ func switch_world(world_name):
 	current_weather.playing = true;
 
 
+# GET BIO
+
+func get_bio():
+	return Globals.get("bio");
+
+func get_ore():
+	return Globals.get("ore");
+
+func get_gas():
+	return Globals.get("gas");
+
+
 # SETTERS
 
 func set_bio(value: int):
@@ -100,3 +112,16 @@ func set_ore(value: int):
 func set_gas(value: int):
 	Globals.set("gas", value);
 	ui.update_gas();
+
+
+func _on_Harvester_collect(type, amount):
+	match (type):
+		"bio":
+			set_bio(get_bio() + amount);
+			return;
+		"ore":
+			set_ore(get_ore() + amount);
+			return;
+		"gas":
+			set_gas(get_gas() + amount);
+			return;

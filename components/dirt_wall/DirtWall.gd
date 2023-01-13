@@ -1,7 +1,7 @@
 extends Area2D
 
 var speed = 200;
-var health = 20;
+var health = 5;
 var harvester: Harvester;
 
 func _ready():
@@ -21,8 +21,9 @@ func adjust_speed(new_speed, base_speed):
 
 
 func _on_DirtWall_area_entered(area):
-	print(area, area.name, area.get_parent().name);
-	harvester.collide_with_stone();
+	if area.is_in_group("harvester_part"):
+		print(area, area.name, area.get_parent().name);
+		harvester.collide_with_stone();
 
 
 func damage(dmg):
@@ -30,5 +31,6 @@ func damage(dmg):
 	if health <= 0:
 		queue_free();
 
-func _on_DirtWall_area_exited(area):
-	harvester.leave_stone();
+func _on_DirtWall_area_exited(area: Node2D):
+	if area.is_in_group("harvester_part"):
+		harvester.leave_stone();

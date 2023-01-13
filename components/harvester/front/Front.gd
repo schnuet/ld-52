@@ -11,6 +11,7 @@ var bought_modules = {
 	"CollectorOre": false,
 	"CollectorGas": false
 };
+onready var modules = $Modules.get_children();
 
 func _ready():
 	width = 300;
@@ -22,6 +23,12 @@ func _ready():
 	harvester = SceneManager.get_entity("Harvester");
 
 	is_ready = true;
+	
+	for module in modules:
+		module.deactivate();
+	
+	active_module.activate();
+	
 
 func _on_Front_selected():
 	if not $ModuleChooserPopup.visible:

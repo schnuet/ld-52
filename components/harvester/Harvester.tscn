@@ -809,18 +809,18 @@ animation = "ore-coil"
 
 [node name="Anchor" type="Node2D" parent="."]
 
-[node name="Top" parent="Anchor" instance=ExtResource( 4 )]
+[node name="Top" parent="Anchor" groups=["harvester_part"] instance=ExtResource( 4 )]
 position = Vector2( 0, -300 )
 collision_layer = 3
 
 [node name="CollisionShape2D" parent="Anchor/Top" index="0"]
 position = Vector2( -44, 12 )
 
-[node name="Body" parent="Anchor" instance=ExtResource( 3 )]
+[node name="Body" parent="Anchor" groups=["harvester_part"] instance=ExtResource( 3 )]
 position = Vector2( 0, -100 )
 collision_layer = 3
 
-[node name="Front" parent="Anchor" instance=ExtResource( 2 )]
+[node name="Front" parent="Anchor" groups=["harvester_part"] instance=ExtResource( 2 )]
 position = Vector2( 352, -100 )
 collision_layer = 3
 

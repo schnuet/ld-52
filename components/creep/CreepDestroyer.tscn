@@ -3,7 +3,7 @@
 [ext_resource path="res://components/creep/CreepDestroyer.gd" type="Script" id=1]
 
 [node name="CreepDestroyer" type="Area2D"]
-collision_mask = 13
+collision_mask = 397
 script = ExtResource( 1 )
 
 [connection signal="area_entered" from="." to="." method="_on_CreepDestroyer_area_entered"]

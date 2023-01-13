@@ -89,6 +89,8 @@ func _ready():
 	is_ready = true;
 	
 func _process(_delta):
+	if not visible:
+		return;
 	update_position();
 
 func update_position():
@@ -193,6 +195,9 @@ func update_available_modules():
 func _on_ModuleChooserPopup_about_to_show():
 	update_available_modules();
 	update_arrow_colors();
+	
+	prev_button.focus_mode = Control.FOCUS_NONE;
+	next_button.focus_mode = Control.FOCUS_NONE;
 
 
 
